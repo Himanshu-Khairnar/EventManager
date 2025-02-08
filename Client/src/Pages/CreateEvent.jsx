@@ -65,7 +65,7 @@ export default function CreateEvent() {
                 className="block text-sm font-medium text-gray-700"
               >
                 {" "}
-                Date & Time{" "}
+                Upload Image{" "}
               </label>
 
               <input

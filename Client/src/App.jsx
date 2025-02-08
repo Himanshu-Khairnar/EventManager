@@ -4,6 +4,7 @@ import Register from "./Pages/Register.jsx"
 import Login from "./Pages/Login.jsx"
 import CreateEvent from "./Pages/CreateEvent.jsx"
 import GetEvents from "./Pages/GetEvents.jsx"
+import GetUserDetails from './Pages/GetUserDetails.jsx';
 export default function App() {
   return (
     <div>
@@ -12,6 +13,7 @@ export default function App() {
           <Route path="/" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/:id/createEvent" element={<CreateEvent />} />
+          <Route path="/:id/getUser" element={<GetUserDetails />} />
           <Route path="/getEvent" element={<GetEvents />} />
         </Routes>
       </BrowserRouter>
