@@ -1,10 +1,10 @@
 
 import express from "express"
 import {Event} from "../models/event.model.js"
-
+import authMiddleware from "../middlewares/auth.middleware.js"
 const router = express.Router();
 // Create Event
-router.post("/", async (req, res) => {
+router.post("/",authMiddleware, async (req, res) => {
   const { name, description, date, createdBy,category } = req.body;
   try {
     const event = new Event({ name, description, date, createdBy, category });
@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.put("/:id", authMiddleware, async (req, res) => {
+router.put("/:id", authMiddleware,async (req, res) => {
   const { id } = req.params;
   try {
     const event = await Event.findByIdAndUpdate(id, req.body, { new: true });

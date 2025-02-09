@@ -2,7 +2,7 @@ import express from "express"
 import mongoose from "mongoose";
 import cors from "cors"
 import dotenv from "dotenv"
-import socketIo from "socket.io"
+// import {socketIo} from "socket.io"
 dotenv.config();
 
 const app = express();
@@ -27,22 +27,22 @@ const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-const io = socketIo(server, {
-  cors: {
-    origin: "*", 
-  },
-});
+// const io = socketIo(server, {
+//   cors: {
+//     origin: "*", 
+//   },
+// });
 
-io.on("connection", (socket) => {
-  console.log("New client connected");
-  socket.on("disconnect", () => {
-    console.log("Client disconnected");
-  });
-});
+// io.on("connection", (socket) => {
+//   console.log("New client connected");
+//   socket.on("disconnect", () => {
+//     console.log("Client disconnected");
+//   });
+// });
 
 
 //routes
-import authRoutes from "./routes/user.routes"
-import eventRoutes from "./routes/event.routes"
+import authRoutes from "./routes/user.routes.js"
+import eventRoutes from "./routes/event.routes.js"
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);

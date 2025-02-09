@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
+  console.log(req.body)
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({ username, email, password: hashedPassword });
@@ -30,7 +31,12 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.json({ token });
+    const authOption = {
+      httpOnly: true,
+      secure: true,
+    };
+    console.log(token);
+    res.cookie(token,authOption).json({ token ,userId:user._id,userName:user.username,userEmail:user.email});
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
