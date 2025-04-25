@@ -19,7 +19,7 @@ import userRouter from "./routes/user.routes.js";
 import eventRouter from "./routes/event.routes.js";
 
 //routes declaration
-app.use("/api/v1/users", userRouter);
+app.use("/users", userRouter);
 app.use("/", eventRouter);
 
 export { app };
