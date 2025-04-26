@@ -77,7 +77,7 @@ npm run dev
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/eventnest.git
+git clone https://github.com/Himanshu-Khairnar/eventnest.git
 cd eventnest
 ```
 ### 📚 Documentation
