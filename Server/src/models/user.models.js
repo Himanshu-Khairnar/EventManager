@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
-const userSchema = new Schema(
+const userSchema = new mongoose.Schema(
   {
     fullName: { type: String, required: [true, "FullName is required"] },
     email: { type: String, required: [true, "Email is required"] },
@@ -10,4 +10,4 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-export const User = await Schema.model("User", userSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);

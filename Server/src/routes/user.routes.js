@@ -3,7 +3,6 @@ import asyncHandler from "express-async-handler";
 
 const router  = Router()
 
-import {login, sigin} from '../controller/user.controllers.js'
-router.route("/login").post(asyncHandler(login))
-router.route("/signin").get(  asyncHandler(sigin))
+import { signin } from "../controller/user.controllers.js";
+router.route("/signin").post(asyncHandler(signin));
 export default router;
