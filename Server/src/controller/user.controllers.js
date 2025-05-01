@@ -33,7 +33,7 @@ export const signin = async (req, res) => {
 
   if (!updatedUser) throw new Error("error in adding refresh token");
 
-  const userData = await User.findById(id).select("-password ");
+  const userData = await User.findById(id).select("-password");
   const Option = {
     httpOnly: true,
     secure: true,
@@ -71,7 +71,7 @@ export const login = async (req, res) => {
 
   if (!updatedUser) throw new Error("error in adding refresh token");
 
-  const userData = await User.findById(id).select("-password  ");
+  const userData = await User.findById(id).select("-password");
   const Option = {
     httpOnly: true,
     secure: true,
