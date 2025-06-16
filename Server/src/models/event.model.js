@@ -37,4 +37,4 @@ const eventSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-export const User = models.User || mongoose.model("User", userSchema);
+export const Event = models.Event || mongoose.model("Event", eventSchema);
