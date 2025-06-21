@@ -1,7 +1,7 @@
 import { Router } from "express";
 import asyncHandler from "express-async-handler";
 
-const router  = Router()
+const router = Router();
 
 import { signin } from "../controller/user.controllers.js";
 import { login } from "../controller/user.controllers.js";
